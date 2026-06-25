@@ -41,3 +41,6 @@ npm-debug.log
 
 # Env stuffs
 .env
+
+# Buffer for LLM prompts
+note.md
