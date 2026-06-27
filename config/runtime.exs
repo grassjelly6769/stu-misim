@@ -22,12 +22,14 @@ if System.get_env("PHX_SERVER") do
   config :stumis, StumisWeb.Endpoint, server: true
 end
 
+IO.puts(env["POSTGRES_PASSWORD"])
+
 # Configure your database
 config :stumis, Stumis.Repo,
-  username: env["POSTGRES_USERNAME"],
+  username: env["POSTGRES_USER"],
   password: env["POSTGRES_PASSWORD"],
   hostname: "localhost",
-  database: "stumis_dev",
+  database: env["POSTGRES_DB"],
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
